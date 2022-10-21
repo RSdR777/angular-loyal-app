@@ -1,0 +1,42 @@
+<h1>
+  App Component
+</h1>
+<br>
+
+<h2>
+  Inyectando el componente app-users
+</h2>
+<app-users></app-users>
+<br>
+
+<div *ngIf="mostrarLogin" [class]="applogin">
+  <h2>
+    Inyectando el componente app-login
+  </h2>
+  <app-login></app-login>
+</div>
+
+<div>
+  <h4>Nombres:</h4>
+  <ul>
+    <li *ngFor="let nombre of nombres">{{nombre}}</li>
+  </ul>
+  <input type="text" [value]="nombre">
+  <button (click)="agregarNombre()">
+    Agregar Nombre
+  </button>
+
+</div>
+<hr>
+
+<button (click)="cambiarVisibilidad()" (dblclick)="alert()">
+  Canbiar Visibilidad
+</button>
+
+<button (click)="cambiarClase()">
+  Canbiar Clase
+</button>
+
+
+<hr>
+<router-outlet></router-outlet>

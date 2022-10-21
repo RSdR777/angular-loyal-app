@@ -1,0 +1,24 @@
+<div>
+  <label>Nombre: {{nombre}}</label>
+  <hr>
+  {{lista}}
+  <!--valor fijo -->
+  {{2+1}}
+  {{2===2}}
+
+  <hr>
+  {{articulo.id}}
+  {{articulo.titulo}}
+  <!--en la template (html) no puedo usar un objeto así-->
+  {{articulo}}
+
+  <hr>
+  {{articulo | json}}
+  <hr>
+  {{edad}}
+  {{alto}}
+  <hr>
+  {{getArticulo() | json}}
+
+  {{sumar(2, 5) }}
+</div>
