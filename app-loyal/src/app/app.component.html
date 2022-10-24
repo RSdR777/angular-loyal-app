@@ -21,7 +21,7 @@
   <ul>
     <li *ngFor="let nombre of nombres">{{nombre}}</li>
   </ul>
-  <input type="text" [value]="nombre">
+  <input type="text" [(ngModel)]="nombre">
   <button (click)="agregarNombre()">
     Agregar Nombre
   </button>
