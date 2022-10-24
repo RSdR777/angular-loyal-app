@@ -3,18 +3,28 @@
 </h1>
 <br>
 
+<!-- ng n g users
 <h2>
   Inyectando el componente app-users
 </h2>
 <app-users></app-users>
 <br>
 
-<div *ngIf="mostrarLogin" [class]="applogin">
-  <h2>
-    Inyectando el componente app-login
-  </h2>
+<div *ngIf="!mostrarLogin; else ElseMostrarLogin" [class]="applogin">
+  <h3>
+    Ahora login component
+  </h3>
   <app-login></app-login>
 </div>
+
+una template
+<ng-template #ElseMostrarLogin>
+  <p>Bloque else de mostrarLogin</p>
+</ng-template>
+<button (click)="mostrarLogin = !mostrarLogin">
+  Cambiar Mostrar login
+</button>
+<br>
 
 <div>
   <h4>Nombres:</h4>
@@ -37,6 +47,37 @@
   Canbiar Clase
 </button>
 
-
+<h3>Ng switch</h3>
+<section>
+    <div [ngSwitch]="edad">
+      <div *ngSwitchCase="1">
+        Edad es 1
+      </div>
+      <div *ngSwitchCase="2">
+        Edad es 2
+      </div>
+      <div *ngSwitchCase="3">
+        Edad es 3
+      </div>
+    </div>
+    <br>
+    <div [ngSwitch]="getEdad()">
+      <div *ngSwitchCase="1">
+        Edad es 1
+      </div>
+      <div *ngSwitchCase="2">
+        Edad es 2
+      </div>
+      <div *ngSwitchCase="3">
+        Edad es 3
+      </div>
+    </div>
+</section>
 <hr>
+-->
+
+<!-- incluyo app-dashboard-->
+<app-dashboard></app-dashboard>
+
+
 <router-outlet></router-outlet>

@@ -10,7 +10,8 @@ export class AppComponent {
   mostrarLogin:boolean = true;
   applogin = 'className';
   nombres=['juan', 'carlos', 'pedro'];
-  nombre:string= '';
+  nombre:string=  '';
+  edad:number = 2;
 
   agregarNombre() {
     this.nombres.push(this.nombre);
@@ -30,5 +31,8 @@ export class AppComponent {
     this.applogin='otraclase';
   }
 
+  public getEdad():number {
+    return this.edad;
+  }
 
 }
