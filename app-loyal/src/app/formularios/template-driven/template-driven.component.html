@@ -1,0 +1,60 @@
+
+<div class="row">
+  <div class="col-6">
+    <form #formulario="ngForm" novalidate (ngSubmit)="submitForm(formulario)">
+      <div class="form-group">
+
+        <!--<label for="nombre"></label>
+        <input
+          ngModel
+          #nombre="ngModel"
+          required
+          name="nombre"
+          nombre
+        >-->
+
+        <label>Email</label>
+        <input
+          ngModel
+          #email="ngModel"
+          name="email"
+          required
+          email
+          [ngClass]="{'is-invalid': email.touched && email.invalid}"
+        >
+
+        <button type="submit" [disabled]="formulario.invalid">
+          Enviar
+        </button>
+        <input type="reset" value="Reset">
+      </div>
+    </form>
+  </div>
+  <div class="col-6">
+    Información de --formularios
+    <ul>
+      <li>
+        valor: {{formulario.value | json}}
+      </li>
+      <li>
+        válido: {{formulario.valid}}
+      </li>
+      <li>
+        submitido: {{formulario.submitted}}
+      </li>
+      <li>
+        pristine: {{formulario.pristine}}
+      </li>
+      <li>
+        tocado: {{formulario.touched}}
+      </li>
+      <li>
+        error en email: {{email.errors | json}}
+      </li>
+
+
+    </ul>
+  </div>
+</div>
+
+
