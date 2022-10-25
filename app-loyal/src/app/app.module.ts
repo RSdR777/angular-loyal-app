@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UsersComponent } from './component/users/users.component';
 import { LoginComponent } from './component/login/login.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { TopbarComponent } from './components/topbar/topbar.component';
@@ -16,6 +16,19 @@ import { ContactoClienteComponent } from './components/contacto-cliente/contacto
 import { RecomendacionesComponent } from './components/recomendaciones/recomendaciones.component';
 import { TemplateDrivenComponent } from './formularios/template-driven/template-driven.component';
 import { ReactiveFormComponent } from './formularios/reactive-form/reactive-form.component';
+
+
+/*material */
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatChipsModule} from '@angular/material/chips';
+import {BasicFormComponent} from './formularios/basic-form/basic-form.component';
+import { NestedFormComponent } from './nested-form/nested-form.component';
+import { ArrayFormComponent } from './formularios/array-form/array-form.component';
+
 
 @NgModule({
   /* definir las vistas que forman parte del módulo*/
@@ -33,13 +46,24 @@ import { ReactiveFormComponent } from './formularios/reactive-form/reactive-form
     RecomendacionesComponent,
     TemplateDrivenComponent,
     ReactiveFormComponent,
+    BasicFormComponent,
+    NestedFormComponent,
+    ArrayFormComponent,
   ],
   /* export de otros módulos que importamos */
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormComponent
+    ReactiveFormsModule,
+
+    /*material*/
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatSelectModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatChipsModule,
   ],
   /*servicios qie se pueden acceder desde cualquier parte de la aplicación (por ser el módulo raíz)*/
   providers: [],
