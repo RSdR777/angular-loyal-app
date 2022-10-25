@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+/*import { SaldoContainer } from './../../dashboard/dashboard.component';*/
+import { Component, Input, OnInit } from '@angular/core';
+import { Saldos } from 'src/app/services/informacion-cliente';
 
 @Component({
   selector: 'app-saldo',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SaldoComponent implements OnInit {
 
+  @Input()
+  saldos?: Saldos;
+
   constructor() { }
 
   ngOnInit(): void {
+    console.log('onInit SaldoComponent ' + this.saldos)
   }
 
 }

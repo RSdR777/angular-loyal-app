@@ -25,9 +25,12 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatChipsModule} from '@angular/material/chips';
-import {BasicFormComponent} from './formularios/basic-form/basic-form.component';
-import { NestedFormComponent } from './nested-form/nested-form.component';
+
+import { BasicFormComponent } from './formularios/basic-form/basic-form.component';
+import { NestedFormComponent } from './formularios/nested-form/nested-form.component';
 import { ArrayFormComponent } from './formularios/array-form/array-form.component';
+import { HttpClientModule } from '@angular/common/http'
+
 
 
 @NgModule({
@@ -64,6 +67,9 @@ import { ArrayFormComponent } from './formularios/array-form/array-form.componen
     MatButtonModule,
     MatCheckboxModule,
     MatChipsModule,
+    /*http module */
+    HttpClientModule
+
   ],
   /*servicios qie se pueden acceder desde cualquier parte de la aplicación (por ser el módulo raíz)*/
   providers: [],
