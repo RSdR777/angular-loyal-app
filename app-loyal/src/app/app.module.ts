@@ -1,3 +1,5 @@
+import { ErrorInterceptorService } from './services/error-interceptor.service';
+import { JwtInterceptorService } from './services/jwt-interceptor.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -29,7 +31,8 @@ import {MatChipsModule} from '@angular/material/chips';
 import { BasicFormComponent } from './formularios/basic-form/basic-form.component';
 import { NestedFormComponent } from './formularios/nested-form/nested-form.component';
 import { ArrayFormComponent } from './formularios/array-form/array-form.component';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
+import { CommonsModule } from './commons/commons.module';
 
 
 
@@ -68,11 +71,21 @@ import { HttpClientModule } from '@angular/common/http'
     MatCheckboxModule,
     MatChipsModule,
     /*http module */
-    HttpClientModule
+    HttpClientModule,
+    /* nuestro módulo */
+    CommonsModule
 
   ],
   /*servicios qie se pueden acceder desde cualquier parte de la aplicación (por ser el módulo raíz)*/
-  providers: [],
+  /* agregar interceptores*/
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS, useClass:JwtInterceptorService, multi:true
+    },
+    {
+      provide: HTTP_INTERCEPTORS, useClass:ErrorInterceptorService, multi:true
+    }
+  ],
   /*componoente inicial de la aplicación (el 'play'). Componente que arranca */
   bootstrap: [AppComponent]
 })

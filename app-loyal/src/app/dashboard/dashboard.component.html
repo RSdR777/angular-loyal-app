@@ -12,7 +12,7 @@ Page Wrapper
       <div id="content">
 
           <!-- Topbar -->
-          <app-topbar></app-topbar>
+          <app-topbar [users]="users"></app-topbar>
           <!-- End of Topbar -->
 
           <!-- Begin Page Content -->
@@ -59,7 +59,7 @@ Page Wrapper
                 </div>
                 <!--Recomendaciones-->
                  <div class="col-sm-12 col-lg-4">
-                   <app-recomendaciones></app-recomendaciones>
+                   <app-recomendaciones [recomendaciones]="informacion?.recomendaciones"></app-recomendaciones>
                 </div>
               </div>
 

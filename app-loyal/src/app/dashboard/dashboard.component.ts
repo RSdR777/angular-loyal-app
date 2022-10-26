@@ -1,6 +1,7 @@
 import { InformacionCliente } from './../services/informacion-cliente';
 import { ClienteDataService } from './../services/cliente-data.service';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 /*export interface DatosEquipo {
   texto:string,
@@ -44,12 +45,19 @@ export class DashboardComponent implements OnInit {
     */
 
     informacion?: InformacionCliente;
+    users:any[] =  [];
 
     constructor(
         private cds: ClienteDataService,
+        private activatedRouter: ActivatedRoute
       ) { }
 
   ngOnInit(): void {
+    // estoy obteniendo desde la definición del routing el nombre que
+    // puse para el resolver
+    //this.users = this.activatedRouter.snapshot.data['users']; //tipo any
+    this.users = this.activatedRouter.snapshot.data['users'];
+debugger;
     // me subscribo a la respuesta
     // cuando alguien actualice la información, el 'dashboard' se va a enterar
     this.cds.getInformacionCliente().subscribe(
